@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "users": {
+      "title": "Usuarios y Estudiantes UMSA",
+      "description": "Nómina de estudiantes y administradores registrados con Carnet de Identidad.",
+      "type": "object",
+      "properties": {
+        "ci": { "type": "string", "description": "Carnet de Identidad (Usuario / Contraseña)" },
+        "nombre": { "type": "string" },
+        "carrera": { "type": "string" },
+        "semestre": { "type": "string" },
+        "facultad": { "type": "string" },
+        "rol": { "type": "string", "enum": ["estudiante", "administrador", "visitante"] },
+        "personasACargoCount": { "type": "number" },
+        "horasSemanalesCuidado": { "type": "number" },
+        "trabaja": { "type": "boolean" },
+        "surveyCompleted": { "type": "boolean" },
+        "fechaRegistro": { "type": "string" }
+      },
+      "required": ["ci", "nombre"]
+    },
+    "surveys": {
+      "title": "Encuestas de Cuidados UMSA",
+      "description": "Respuestas completas recopiladas de la encuesta sobre cuidados y corresponsabilidad.",
+      "type": "object",
+      "properties": {
+        "ci": { "type": "string" },
+        "edad": { "type": "number" },
+        "carrera": { "type": "string" },
+        "semestre": { "type": "string" },
+        "genero": { "type": "string" },
+        "generoOtro": { "type": "string" },
+        "trabaja": { "type": "string" },
+        "viveCon": { "type": "string" },
+        "viveConOtro": { "type": "string" },
+        "responsabilidadesCuidado": { "type": "array", "items": { "type": "string" } },
+        "distribucionCuidado": { "type": "object" },
+        "consecuenciasEstudios": { "type": "array", "items": { "type": "string" } },
+        "responsabilidadActual": { "type": "string" },
+        "responsabilidadIdeal": { "type": "string" },
+        "creenciasCuidado": { "type": "object" },
+        "frasesFrecuentes": { "type": "array", "items": { "type": "string" } },
+        "fraseOtro": { "type": "string" },
+        "dondeEscuchaFrases": { "type": "array", "items": { "type": "string" } },
+        "dondeEscuchaOtro": { "type": "string" },
+        "hipoteticaOcurriria": { "type": "string" },
+        "hipoteticaDeberiaOcurrir": { "type": "string" },
+        "sienteJuzgadoPadreMadre": { "type": "string" },
+        "conoceServiciosApoyo": { "type": "string" },
+        "tipoApoyoMasImportante": { "type": "string" },
+        "sugerenciaPlataformaDigital": { "type": "string" },
+        "accionOservicioFaltante": { "type": "string" },
+        "fechaCompletado": { "type": "string" }
+      },
+      "required": ["ci"]
+    },
+    "network_members": {
+      "title": "Redes de Cartografía Social",
+      "description": "Nodos y apoyos comunitarios registrados por los estudiantes.",
+      "type": "object",
+      "properties": {
+        "ci": { "type": "string" },
+        "nombre": { "type": "string" },
+        "relacion": { "type": "string" },
+        "tipoApoyo": { "type": "string" },
+        "frecuencia": { "type": "string" },
+        "disponibilidad": { "type": "string" },
+        "notas": { "type": "string" },
+        "categoriaNodo": { "type": "string" }
+      },
+      "required": ["ci", "nombre"]
+    }
+  }
+}

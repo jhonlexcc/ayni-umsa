@@ -1,0 +1,6 @@
+{
+  "name": "Ayni UMSA",
+  "description": "Sistema Web para la gestión, diagnóstico participativo y fortalecimiento de redes de cuidado en la Universidad Mayor de San Andrés.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
